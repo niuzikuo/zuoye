@@ -1,0 +1,23 @@
+#include<stdio.h>
+void hanshu(int a[], int n) {
+	for (int b = 0; b < n; b++) {
+		int	m = b; 
+		for (int c = b + 1; c <= n - 1; c++) {
+			if (a[m] > a[c]) {
+				m = c;
+			}
+		}
+		int t = a[b];
+		a[b] = a[m];
+		a[m] = t;
+	}
+}
+int main() {
+	int a [6] = {4,6,5,7,3,2};
+	int n = 6;
+	hanshu(a, n);
+	for (int d = 0; d <= n - 1; d++) {
+		printf("%d", a[d]);
+		printf("\n");
+	}return 0;
+}
